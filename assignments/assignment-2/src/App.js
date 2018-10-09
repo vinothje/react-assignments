@@ -12,8 +12,10 @@ class App extends Component {
     this.setState({text: event.target.value});
   }
 
-  handleCharClick = () => {
-    console.log('handle click');
+  handleCharClick = (event, index) => {
+      const letters = this.state.text.split('');
+      letters.splice(index, 1);
+      this.setState({text: letters.join('')});
   }
 
   render() {
@@ -25,12 +27,11 @@ class App extends Component {
           textLength={this.state.text.length}
         />
         {this.state.text.split('').map((letter, index) => {
-          console.log(letter);
           return (
             <CharComponent
               key={index}
               letter={letter}
-              click={this.handleCharClick}
+              charClick={(event) => this.handleCharClick(event, index)}
             />
           );
         })}

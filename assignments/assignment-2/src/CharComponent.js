@@ -3,9 +3,9 @@ import './App.css';
 
 const CharComponent = (props) => {
     return (
-        <p className="char-component" onClick={console.log('test')}>
+        <div className="char-component" onClick={props.charClick}>
             {props.letter}
-        </p>
+        </div>
     );
 }
 
