@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.char-component {
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
